@@ -6,8 +6,8 @@ import {
   CreateProps,
   ReferenceArrayInput,
   SelectArrayInput,
-  SelectInput,
   NumberInput,
+  SelectInput,
 } from "react-admin";
 
 import { FarmActivityTitle } from "../farmActivity/FarmActivityTitle";
@@ -24,18 +24,6 @@ export const FarmCreate = (props: CreateProps): React.ReactElement => {
         >
           <SelectArrayInput optionText={FarmActivityTitle} />
         </ReferenceArrayInput>
-        <SelectInput
-          source="farmType"
-          label="Farm Type"
-          choices={[
-            { label: "Farm", value: "Farm" },
-            { label: "Terrace", value: "Terrace" },
-            { label: "Garden", value: "Garden" },
-          ]}
-          optionText="label"
-          allowEmpty
-          optionValue="value"
-        />
         <NumberInput label="Height Area" source="heightArea" />
         <NumberInput label="Length Area" source="lengthArea" />
         <SelectInput
