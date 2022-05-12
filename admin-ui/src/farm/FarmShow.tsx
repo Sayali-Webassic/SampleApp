@@ -18,7 +18,6 @@ export const FarmShow = (props: ShowProps): React.ReactElement => {
     <Show {...props}>
       <SimpleShowLayout>
         <DateField source="createdAt" label="Created At" />
-        <TextField label="Farm Type" source="farmType" />
         <TextField label="Height Area" source="heightArea" />
         <TextField label="ID" source="id" />
         <TextField label="Length Area" source="lengthArea" />

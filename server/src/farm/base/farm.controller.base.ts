@@ -52,7 +52,6 @@ export class FarmControllerBase {
       data: data,
       select: {
         createdAt: true,
-        farmType: true,
         heightArea: true,
         id: true,
         lengthArea: true,
@@ -79,7 +78,6 @@ export class FarmControllerBase {
       ...args,
       select: {
         createdAt: true,
-        farmType: true,
         heightArea: true,
         id: true,
         lengthArea: true,
@@ -107,7 +105,6 @@ export class FarmControllerBase {
       where: params,
       select: {
         createdAt: true,
-        farmType: true,
         heightArea: true,
         id: true,
         lengthArea: true,
@@ -144,7 +141,6 @@ export class FarmControllerBase {
         data: data,
         select: {
           createdAt: true,
-          farmType: true,
           heightArea: true,
           id: true,
           lengthArea: true,
@@ -180,7 +176,6 @@ export class FarmControllerBase {
         where: params,
         select: {
           createdAt: true,
-          farmType: true,
           heightArea: true,
           id: true,
           lengthArea: true,
