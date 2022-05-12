@@ -69,7 +69,7 @@ model Product {
 model Farm {
   createdAt            DateTime                      @default(now())
   farmActivities       FarmActivity[]
-  farmType             EnumFarmFarmType
+  farmType             EnumFarmFarmType?
   heightArea           Float?
   id                   String                        @id @default(cuid())
   lengthArea           Float?
