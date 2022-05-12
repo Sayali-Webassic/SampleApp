@@ -31,12 +31,15 @@ class FarmCreateInput {
   farmActivities?: FarmActivityCreateNestedManyWithoutFarmsInput;
 
   @ApiProperty({
-    required: true,
+    required: false,
     enum: EnumFarmFarmType,
   })
   @IsEnum(EnumFarmFarmType)
-  @Field(() => EnumFarmFarmType)
-  farmType!: "Farm" | "Terrace" | "Garden";
+  @IsOptional()
+  @Field(() => EnumFarmFarmType, {
+    nullable: true,
+  })
+  farmType?: "Farm" | "Terrace" | "Garden" | null;
 
   @ApiProperty({
     required: false,

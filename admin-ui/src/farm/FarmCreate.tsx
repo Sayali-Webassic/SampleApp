@@ -33,6 +33,7 @@ export const FarmCreate = (props: CreateProps): React.ReactElement => {
             { label: "Garden", value: "Garden" },
           ]}
           optionText="label"
+          allowEmpty
           optionValue="value"
         />
         <NumberInput label="Height Area" source="heightArea" />

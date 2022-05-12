@@ -39,7 +39,7 @@ class FarmUpdateInput {
   @Field(() => EnumFarmFarmType, {
     nullable: true,
   })
-  farmType?: "Farm" | "Terrace" | "Garden";
+  farmType?: "Farm" | "Terrace" | "Garden" | null;
 
   @ApiProperty({
     required: false,

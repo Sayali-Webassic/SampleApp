@@ -33,6 +33,7 @@ export const FarmEdit = (props: EditProps): React.ReactElement => {
             { label: "Garden", value: "Garden" },
           ]}
           optionText="label"
+          allowEmpty
           optionValue="value"
         />
         <NumberInput label="Height Area" source="heightArea" />
