@@ -2,7 +2,7 @@ import { FarmActivityUpdateManyWithoutFarmsInput } from "./FarmActivityUpdateMan
 
 export type FarmUpdateInput = {
   farmActivities?: FarmActivityUpdateManyWithoutFarmsInput;
-  farmType?: Array<"Farm" | "Terrace" | "Garden">;
+  farmType?: "Farm" | "Terrace" | "Garden";
   heightArea?: number | null;
   lengthArea?: number | null;
   sunlightAvailability?: "Low" | "Medium" | "High" | null;

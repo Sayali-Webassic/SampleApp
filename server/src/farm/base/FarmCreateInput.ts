@@ -33,16 +33,10 @@ class FarmCreateInput {
   @ApiProperty({
     required: true,
     enum: EnumFarmFarmType,
-    isArray: true,
   })
-  @IsEnum(EnumFarmFarmType, {
-    each: true,
-  })
-  @IsOptional()
-  @Field(() => [EnumFarmFarmType], {
-    nullable: true,
-  })
-  farmType?: Array<"Farm" | "Terrace" | "Garden">;
+  @IsEnum(EnumFarmFarmType)
+  @Field(() => EnumFarmFarmType)
+  farmType!: "Farm" | "Terrace" | "Garden";
 
   @ApiProperty({
     required: false,
