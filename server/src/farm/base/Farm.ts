@@ -15,12 +15,13 @@ import {
   IsDate,
   ValidateNested,
   IsOptional,
+  IsEnum,
   IsNumber,
   IsString,
-  IsEnum,
 } from "class-validator";
 import { Type } from "class-transformer";
 import { FarmActivity } from "../../farmActivity/base/FarmActivity";
+import { EnumFarmFarmType } from "./EnumFarmFarmType";
 import { EnumFarmSunlightAvailability } from "./EnumFarmSunlightAvailability";
 @ObjectType()
 class Farm {
@@ -40,6 +41,17 @@ class Farm {
   @Type(() => FarmActivity)
   @IsOptional()
   farmActivities?: Array<FarmActivity>;
+
+  @ApiProperty({
+    required: false,
+    enum: EnumFarmFarmType,
+  })
+  @IsEnum(EnumFarmFarmType)
+  @IsOptional()
+  @Field(() => EnumFarmFarmType, {
+    nullable: true,
+  })
+  farmType?: "Farm" | "Garden" | "Terrace" | null;
 
   @ApiProperty({
     required: false,

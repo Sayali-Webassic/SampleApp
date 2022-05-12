@@ -69,6 +69,7 @@ model Product {
 model Farm {
   createdAt            DateTime                      @default(now())
   farmActivities       FarmActivity[]
+  farmType             EnumFarmFarmType?
   heightArea           Float?
   id                   String                        @id @default(cuid())
   lengthArea           Float?
@@ -86,6 +87,12 @@ model FarmActivity {
   id           String    @id @default(cuid())
   title        String
   updatedAt    DateTime  @updatedAt
+}
+
+enum EnumFarmFarmType {
+  Farm
+  Garden
+  Terrace
 }
 
 enum EnumFarmSunlightAvailability {

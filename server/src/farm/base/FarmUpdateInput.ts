@@ -12,8 +12,9 @@ https://docs.amplication.com/docs/how-to/custom-code
 import { InputType, Field } from "@nestjs/graphql";
 import { ApiProperty } from "@nestjs/swagger";
 import { FarmActivityUpdateManyWithoutFarmsInput } from "./FarmActivityUpdateManyWithoutFarmsInput";
-import { ValidateNested, IsOptional, IsNumber, IsEnum } from "class-validator";
+import { ValidateNested, IsOptional, IsEnum, IsNumber } from "class-validator";
 import { Type } from "class-transformer";
+import { EnumFarmFarmType } from "./EnumFarmFarmType";
 import { EnumFarmSunlightAvailability } from "./EnumFarmSunlightAvailability";
 @InputType()
 class FarmUpdateInput {
@@ -28,6 +29,17 @@ class FarmUpdateInput {
     nullable: true,
   })
   farmActivities?: FarmActivityUpdateManyWithoutFarmsInput;
+
+  @ApiProperty({
+    required: false,
+    enum: EnumFarmFarmType,
+  })
+  @IsEnum(EnumFarmFarmType)
+  @IsOptional()
+  @Field(() => EnumFarmFarmType, {
+    nullable: true,
+  })
+  farmType?: "Farm" | "Garden" | "Terrace" | null;
 
   @ApiProperty({
     required: false,

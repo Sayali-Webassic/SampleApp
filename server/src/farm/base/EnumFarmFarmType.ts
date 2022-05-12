@@ -14,8 +14,8 @@ import { registerEnumType } from "@nestjs/graphql";
 
 export enum EnumFarmFarmType {
   Farm = "Farm",
-  Terrace = "Terrace",
   Garden = "Garden",
+  Terrace = "Terrace",
 }
 
 registerEnumType(EnumFarmFarmType, {

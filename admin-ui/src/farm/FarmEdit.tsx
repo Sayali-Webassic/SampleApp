@@ -6,8 +6,8 @@ import {
   EditProps,
   ReferenceArrayInput,
   SelectArrayInput,
-  NumberInput,
   SelectInput,
+  NumberInput,
 } from "react-admin";
 
 import { FarmActivityTitle } from "../farmActivity/FarmActivityTitle";
@@ -24,6 +24,18 @@ export const FarmEdit = (props: EditProps): React.ReactElement => {
         >
           <SelectArrayInput optionText={FarmActivityTitle} />
         </ReferenceArrayInput>
+        <SelectInput
+          source="farmType"
+          label="Farm Type"
+          choices={[
+            { label: "Farm", value: "Farm" },
+            { label: "Garden", value: "Garden" },
+            { label: "Terrace", value: "Terrace" },
+          ]}
+          optionText="label"
+          allowEmpty
+          optionValue="value"
+        />
         <NumberInput label="Height Area" source="heightArea" />
         <NumberInput label="Length Area" source="lengthArea" />
         <SelectInput

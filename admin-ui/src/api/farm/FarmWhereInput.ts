@@ -4,6 +4,7 @@ import { StringFilter } from "../../util/StringFilter";
 
 export type FarmWhereInput = {
   farmActivities?: FarmActivityListRelationFilter;
+  farmType?: "Farm" | "Garden" | "Terrace";
   heightArea?: FloatNullableFilter;
   id?: StringFilter;
   lengthArea?: FloatNullableFilter;
