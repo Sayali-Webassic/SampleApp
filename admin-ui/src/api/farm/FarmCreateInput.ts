@@ -2,7 +2,7 @@ import { FarmActivityCreateNestedManyWithoutFarmsInput } from "./FarmActivityCre
 
 export type FarmCreateInput = {
   farmActivities?: FarmActivityCreateNestedManyWithoutFarmsInput;
-  farmType?: Array<"Farm" | "Terrace" | "Garden">;
+  farmType: "Farm" | "Terrace" | "Garden";
   heightArea?: number | null;
   lengthArea?: number | null;
   sunlightAvailability?: "Low" | "Medium" | "High" | null;

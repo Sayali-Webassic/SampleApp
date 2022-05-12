@@ -45,16 +45,12 @@ class Farm {
   @ApiProperty({
     required: true,
     enum: EnumFarmFarmType,
-    isArray: true,
   })
-  @IsEnum(EnumFarmFarmType, {
-    each: true,
-  })
-  @IsOptional()
-  @Field(() => [EnumFarmFarmType], {
+  @IsEnum(EnumFarmFarmType)
+  @Field(() => EnumFarmFarmType, {
     nullable: true,
   })
-  farmType?: Array<"Farm" | "Terrace" | "Garden">;
+  farmType?: "Farm" | "Terrace" | "Garden";
 
   @ApiProperty({
     required: false,

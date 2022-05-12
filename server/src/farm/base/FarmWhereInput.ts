@@ -14,6 +14,7 @@ import { ApiProperty } from "@nestjs/swagger";
 import { FarmActivityListRelationFilter } from "../../farmActivity/base/FarmActivityListRelationFilter";
 import { ValidateNested, IsOptional, IsEnum } from "class-validator";
 import { Type } from "class-transformer";
+import { EnumFarmFarmType } from "./EnumFarmFarmType";
 import { FloatNullableFilter } from "../../util/FloatNullableFilter";
 import { StringFilter } from "../../util/StringFilter";
 import { EnumFarmSunlightAvailability } from "./EnumFarmSunlightAvailability";
@@ -30,6 +31,17 @@ class FarmWhereInput {
     nullable: true,
   })
   farmActivities?: FarmActivityListRelationFilter;
+
+  @ApiProperty({
+    required: false,
+    enum: EnumFarmFarmType,
+  })
+  @IsEnum(EnumFarmFarmType)
+  @IsOptional()
+  @Field(() => EnumFarmFarmType, {
+    nullable: true,
+  })
+  farmType?: "Farm" | "Terrace" | "Garden";
 
   @ApiProperty({
     required: false,
